@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="768.0" prefWidth="1024.0" styleClass="background" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.view.InstructionsController">
+   <children>
+      <Label id="title" alignment="CENTER" contentDisplay="TOP" prefHeight="121.0" prefWidth="1022.0" text="How to Play?" />
+      <VBox id="consoleLabel" layoutX="461.0" layoutY="115.0" prefHeight="562.0" prefWidth="471.0">
+         <children>
+            <ImageView fx:id="tutorialImage" fitHeight="372.0" fitWidth="495.0" pickOnBounds="true" preserveRatio="true" styleClass="text" />
+            <Label fx:id="tutorialDescription" alignment="TOP_LEFT" prefHeight="768.0" prefWidth="1024.0" wrapText="true">
+               <padding>
+                  <Insets top="10.0" />
+               </padding></Label>
+         </children>
+      </VBox>
+    <AnchorPane layoutX="92.0" layoutY="117.0" minHeight="0.0" minWidth="0.0" prefHeight="562.0" prefWidth="349.0">
+         <children>
+            <VBox prefHeight="561.0" prefWidth="334.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label id="invertedLabel" fx:id="title1" onMouseClicked="#selectTitle1" prefHeight="67.0" prefWidth="334.0" />
+                  <Label id="invertedLabel" fx:id="title2" layoutX="10.0" layoutY="10.0" onMouseClicked="#selectTitle2" prefHeight="67.0" prefWidth="334.0" text="Label" />
+                  <Label id="invertedLabel" fx:id="title3" layoutX="10.0" layoutY="77.0" onMouseClicked="#selectTitle3" prefHeight="67.0" prefWidth="334.0" text="Label" />
+                  <Label id="invertedLabel" fx:id="title4" layoutX="10.0" layoutY="144.0" onMouseClicked="#selectTitle4" prefHeight="67.0" prefWidth="334.0" text="Label" />
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <HBox layoutX="20.0" layoutY="20.0" prefHeight="64.0" prefWidth="64.0">
+         <children>
+            <Button id="quitButton" mnemonicParsing="false" onAction="#handleReturn" prefHeight="64.0" prefWidth="64.0" stylesheets="@Style.css" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

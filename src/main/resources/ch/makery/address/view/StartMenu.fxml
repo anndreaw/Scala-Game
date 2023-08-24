@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="768.0" prefWidth="1024.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.view.StartMenuController">
+   <children>
+      <ImageView fitHeight="768.0" fitWidth="1030.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Emotion_Start_Screen.png" />
+         </image>
+         <viewport>
+            <Rectangle2D />
+         </viewport>
+      </ImageView>
+      <HBox alignment="BOTTOM_CENTER" layoutX="366.0" layoutY="596.0" prefHeight="53.0" prefWidth="292.0" AnchorPane.bottomAnchor="120.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#startGame" prefHeight="122.0" prefWidth="627.0" text="Start" />
+         </children>
+      </HBox>
+      <HBox layoutX="562.0" layoutY="28.0" prefHeight="64.0" prefWidth="64.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
+         <children>
+            <Button id="informationButton" mnemonicParsing="false" onAction="#handleInstructions" prefHeight="768.0" prefWidth="1024.0" stylesheets="@Style.css" />
+         </children>
+      </HBox>
+      <VBox layoutX="403.0" layoutY="516.0" prefHeight="64.0" prefWidth="219.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="21.0" prefWidth="228.0" text="Player Name:">
+               <padding>
+                  <Insets bottom="5.0" />
+               </padding></Label>
+            <TextField fx:id="playerName" prefHeight="41.0" prefWidth="187.0" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

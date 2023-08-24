@@ -1,0 +1,105 @@
+.background {
+    -fx-background-color: white;
+}
+
+.text{
+    -fx-font-family: "Consolas"
+}
+
+.button{
+    -fx-background-color: white;
+    -fx-border-color: black;
+    -fx-border-width: 3;
+    -fx-background-insets: 0; /** Remove white line under button**/
+}
+
+.button:hover{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0), 0, 0, 5, 5);
+    -fx-cursor: hand;
+}
+
+.button:disable{
+    -fx-background-color: #CBC9C9;
+    -fx-text-color: #7B7B7B;
+    -fx-opacity: 0.0
+}
+
+.button:focus{
+    -fx-border-width: 2;
+}
+.split-pane *.split-pane-divider{
+    -fx-padding: 1 0 1 0
+}
+
+.split-pane {
+    -fx-padding: 1 0 0 0;
+}
+.progress-bar .track{
+    -fx-border-width: 4;
+    -fx-border-color: black;
+}
+
+
+#informationButton{
+    -fx-background-image: url("../images/Instructions_Button.png");
+    -fx-background-size: cover;
+    -fx-border-width: 0;
+}
+
+#playerName{
+    -fx-background-color: white;
+    -fx-border-width: 3 3 3 3;
+    -fx-border-color: black;
+}
+#explodeButton{
+    -fx-background-color: red;
+}
+#explodeMeter .bar{
+    -fx-background-color: linear-gradient(to right, yellow, red);
+}
+
+#playerPane{
+    -fx-border-insets: 10;
+    -fx-background-color: white;
+    -fx-border-color: black;
+    -fx-border-width: 5
+}
+
+#battleGrid{
+    -fx-padding: 10 10 10 10
+}
+
+#consoleLabel{
+    -fx-padding: 5 5 5 5;
+    -fx-border-color: black;
+    -fx-border-width: 3;
+}
+
+#quitButton{
+    -fx-background-image: url("../images/Back_Button.png");
+    -fx-background-size: cover;
+    -fx-border-width: 0;
+}
+
+#enemy1Image:hover{
+    -fx-effect: dropshadow(three-pass-box, rgba(120,120,120), 10, 1, 0, 0);
+}
+
+#enemy2Image:hover{
+    -fx-effect: dropshadow(three-pass-box, rgba(120,120,120), 10, 1, 0, 0);
+}
+
+#boldLabel{
+    -fx-font-weight: bold;
+}
+
+#title{
+    -fx-font-weight: bold;
+    -fx-font-size: 20;
+}
+#invertedLabel:hover, #invertedLabel:focus{
+    -fx-padding: 5 5 5 5;
+    -fx-background-color: black;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}

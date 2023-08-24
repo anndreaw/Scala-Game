@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--<?import com.gluonhq.charm.glisten.control.ProgressBar?>-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="768.0" prefWidth="1024.0" styleClass="background" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.view.BattleController">
+   <children>
+      <SplitPane dividerPositions="0.6723237597911227" layoutX="378.0" layoutY="305.0" orientation="VERTICAL" prefHeight="768.0" prefWidth="1024.0" styleClass="split-pane-divider" stylesheets="@Style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane styleClass="background" stylesheets="@Style.css">
+               <children>
+                  <GridPane id="battleGrid" prefHeight="525.0" prefWidth="1022.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="137.0" minHeight="6.0" prefHeight="132.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="130.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="447.0" minHeight="10.0" prefHeight="287.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="174.0" minHeight="0.0" prefHeight="58.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="3">
+                           <children>
+                              <ProgressBar fx:id="playerHealthBar" prefHeight="22.0" prefWidth="213.0" progress="1.0" />
+                              <Label id="boldLabel" fx:id="playerNameLabel" prefHeight="21.0" prefWidth="257.0" stylesheets="@Style.css" text="Player Name">
+                                 <padding>
+                                    <Insets top="5.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <ImageView fx:id="playerImage" fitHeight="269.0" fitWidth="258.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+                           <image>
+                              <Image url="@../images/Player.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="quitButton" alignment="CENTER" mnemonicParsing="false" onAction="#quit" prefHeight="64.0" prefWidth="64.0" GridPane.valignment="TOP" />
+                        <Label fx:id="enemy1DmgTakenLabel" text="Damage" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
+                        <Label fx:id="enemy2DmgTakenLabel" layoutX="522.0" layoutY="173.0" text="Damage" GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
+                        <VBox alignment="BOTTOM_LEFT" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2">
+                           <children>
+                              <Label id="boldLabel" fx:id="enemy1NameLabel" prefHeight="21.0" prefWidth="264.0" text="Enemy 1 Name">
+                                 <padding>
+                                    <Insets bottom="5.0" />
+                                 </padding>
+                              </Label>
+                              <ProgressBar fx:id="enemy1HealthBar" prefHeight="22.0" prefWidth="200.0" progress="1.0" />
+                              <Label fx:id="enemy1MaxHpLabel" alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="199.0" text="0" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="BOTTOM_LEFT" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3">
+                           <children>
+                              <Label id="boldLabel" fx:id="enemy2NameLabel" prefHeight="21.0" prefWidth="270.0" text="Enemy 2 Name">
+                                 <padding>
+                                    <Insets bottom="5.0" />
+                                 </padding>
+                              </Label>
+                              <ProgressBar fx:id="enemy2HealthBar" prefHeight="22.0" prefWidth="200.0" progress="1.0" />
+                              <Label fx:id="enemy2MaxHpLabel" alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="200.0" text="0" />
+                           </children>
+                        </VBox>
+                        <Label fx:id="playerDmgTakenLabel" text="Damage" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
+                        <ImageView fx:id="enemy1Image" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#selectEnemy1" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                           <image>
+                              <Image url="@../images/Enemy/Error%20404%20Message.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="enemy2Image" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#selectEnemy2" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                           <image>
+                              <Image url="@../images/Enemy/No%20Wifi%20Dinosaur.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </GridPane>
+                  <ImageView fx:id="select1" fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" x="550.0" y="330.0">
+                     <image>
+                        <Image url="@../images/Select_Arrow.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="select2" fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" x="800.0" y="330.0">
+                     <image>
+                        <Image url="@../images/Select_Arrow.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+          <AnchorPane id="playerPane" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <HBox layoutX="57.0" layoutY="146.0" prefHeight="64.0" prefWidth="492.0">
+                     <children>
+                        <Button fx:id="attack1Button" mnemonicParsing="false" onAction="#attackMove1" prefHeight="233.0" prefWidth="1022.0" text="Laughter">
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                           <tooltip>
+                              <Tooltip text="Effective on Angry, increases defense by 10%" />
+                           </tooltip></Button>
+                        <Button fx:id="attack2Button" mnemonicParsing="false" onAction="#attackMove2" prefHeight="233.0" prefWidth="1022.0" text="Cry">
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                           <tooltip>
+                              <Tooltip text="Effective on Happy, increases 200 HP " />
+                           </tooltip></Button>
+                        <Button fx:id="attack3Button" mnemonicParsing="false" onAction="#attackMove3" prefHeight="233.0" prefWidth="1022.0" text="Smash">
+                           <tooltip>
+                              <Tooltip text="Effective on Sad, increases attack by 10%" />
+                           </tooltip></Button>
+                     </children>
+                  </HBox>
+                  <VBox layoutX="57.0" layoutY="41.0" prefHeight="88.0" prefWidth="492.0">
+                     <children>
+                        <Label id="consoleLabel" fx:id="consoleLabel" alignment="TOP_LEFT" prefHeight="247.0" prefWidth="1022.0" stylesheets="@Style.css" text="Player has joined the battle." wrapText="true">
+                           <font>
+                              <Font name="Consolas" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <ProgressBar id="explodeMeter" fx:id="emotionMeter" layoutX="849.0" layoutY="81.0" prefHeight="90.0" prefWidth="170.0" progress="0.0" rotate="-90.0" stylesheets="@Style.css" />
+                  <Button fx:id="explodeButton" layoutX="704.0" layoutY="146.0" mnemonicParsing="false" onAction="#explodeMove" prefHeight="64.0" prefWidth="164.0" stylesheets="@Style.css" text="Explode" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
